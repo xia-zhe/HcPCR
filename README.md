@@ -52,16 +52,6 @@ PYTHONHASHSEED=0 torchrun --nproc_per_node 4 main_hcpcrpp.py --run_val --resume 
 
 Use `--run_viz` for visualization. Outputs are written to `experiments/[EXP_NAME]/viz/`. Use `--one_class [OBJECT_CLASS]` to evaluate or visualize one CO3D class, and `--save_pc` to export point clouds.
 
-## Hypersim Experiments
-
-Train on Hypersim:
-
-```bash
-torchrun --nproc_per_node 4 main_hcpcrpp.py --exp_name [EXPERIMENT_NAME] --hypersim_path [DATASET_PATH] --use_hypersim --blr 5e-5 --epochs 50 --train_epoch_len_multiplier 3200 --accum_iter 8 --n_groups 550
-```
-
-For evaluation or visualization, add `--run_val` or `--run_viz` and set `--resume [MODEL_PATH]`.
-
 ## Zero-shot Demos
 
 Run reconstruction from an iPhone RGB-D capture:
