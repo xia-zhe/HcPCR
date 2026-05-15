@@ -102,4 +102,3 @@ The demo visualization is written to `demo/output.html`.
 ## Acknowledgement
 
 This codebase is adapted from [NU-MCC](https://github.com/sail-sg/numcc/tree/main), which is itself built on Meta's [MCC](https://github.com/facebookresearch/MCC). We thank the authors of both projects for releasing their code.
-```
