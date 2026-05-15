@@ -102,20 +102,7 @@ The demo visualization is written to `demo/output.html`.
 ## Acknowledgement
 
 This codebase is adapted from [NU-MCC](https://github.com/sail-sg/numcc/tree/main), which is itself built on Meta's [MCC](https://github.com/facebookresearch/MCC). We thank the authors of both projects for releasing their code.
-
-## Citation
-
-If this code or paper is useful for your work, please cite:
-
-```bibtex
-@article{lihcpcrpp,
-  title={Hyperbolic-Constraint Adaptive Curvature Point Cloud Reconstruction from Single RGB-D Images},
-  author={Li, Wenrui and Yang, Zhe and Chen, Hongtao and Zuo, Wangmeng and Fan, Xiaopeng and Tian, Yonghong},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}
-}
 ```
 =======
 # HcPCR
 ## Hyperbolic-Constraint Adaptive Curvature Point Cloud Reconstruction from Single RGB-D Images
-
->>>>>>> 48deb835533144e7547dbcec3d9531c44c740d29
