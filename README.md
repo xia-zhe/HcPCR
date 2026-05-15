@@ -36,12 +36,6 @@ Evaluation and inference:
 ```bash
 # Standard inference
 PYTHONHASHSEED=[SEED] torchrun --nproc_per_node [N_GPU] main_hcpcrpp.py --run_val --resume [MODEL_PATH] --n_query_udf [BATCH_QUERY_FOR_REPULSIVE]
-
-# High-resolution inference
-PYTHONHASHSEED=[SEED] torchrun --nproc_per_node [N_GPU] main_hcpcrpp.py --run_val --resume [MODEL_PATH] --n_query_udf [BATCH_QUERY_FOR_REPULSIVE] --hr --xyz_size_hr 224
-
-# Smoothing
-PYTHONHASHSEED=[SEED] torchrun --nproc_per_node [N_GPU] main_hcpcrpp.py --run_val --resume [MODEL_PATH] --n_query_udf [BATCH_QUERY_FOR_REPULSIVE] --nneigh 12 --nn_seen 12
 ```
 
 Example with 4 GPUs:
