@@ -205,7 +205,6 @@ class HcPCRPP(nn.Module):
 
             pred_udf = pred[:,:,0]
 
-            # 这地方不要随便乱动!!
             grad_x = torch.autograd.grad(
             outputs=pred_udf.sum(),  
             inputs=points,
@@ -260,7 +259,7 @@ class HcPCRPP(nn.Module):
         # points = points[pos].unsqueeze(0) # (1, n, 3)
         # points = points.reshape((query_xyz.shape[0],query_xyz.shape[1],3))
         points = self.move_points(query_xyz.clone(), seen_xyz, valid_seen_xyz, fea, up_grid_fea, n_iter=self.args.udf_n_iter//2)
-        points.requires_grad = False  # 请注意！如果要用 points和points_patial来进入到下一个网络，记得进入前设置为计算梯度
+        points.requires_grad = False  
 
         # pred_udf = F.relu(out[:,:,:1])
         # pred_udf = torch.clamp(pred_udf, max=0.5) 
@@ -274,8 +273,7 @@ class HcPCRPP(nn.Module):
         # mar, points_patial, out_p_patial = get_children_np2(points2, out_f=out.clone(), starting=points2.shape[-1]-1, kmin = points2.shape[-1]//2, kmax = points2.shape[-1]) 
 
 ####(B,N1,C) out (B,N2,C) out_f_partial 
-#######################张量回归############################
-    # 最大池
+###################################################
         # out_f = out.permute(0, 2, 1)
         # out_f = F.adaptive_max_pool1d(out_f, 1).view(out_f.shape[0], -1)
 
@@ -286,16 +284,14 @@ class HcPCRPP(nn.Module):
         # out_f = out_f.view(-1, out_f.shape[-1])
         # out_f_patial = out_f_patial.view(-1, out_f_patial.shape[-1])
 
-    # 注意力池化(有参数)
         # out_f = self.attn_pool(out)
         # out_f_patial = self.attn_pool2(out_p_patial)
     
-    # 张量回归(有参数)
         out_f = self.trl_1(out)
         out_f_patial = self.trl_2(out_p_patial)
 
 #(B,C) (B,C)
-##################多重自适应曲率空间###########################
+#############################################
 #(B,C) (B,C)
         curvature = self.fusenet1(torch.cat((out_f, out_f_patial), 1))
         curvature = self.scale * self.fusenet2(curvature)
@@ -316,8 +312,6 @@ class HcPCRPP(nn.Module):
         l1 = l1 / self.num_curvature
         l2 = l2 / self.num_curvature
         # mar, points_patial, _, _, _ = get_children_np(points2, starting=points2.shape[-1]-1, kmin = points2.shape[-1]//2, kmax = points2.shape[-1]) 
-        # points_patial: [16, 3, tk] 是部分点的坐标  out_f_partial: [16, tk, 769] 是对应部分点的嵌入
-        # 想换维度用:
         # points_patial = out_patial.permute(0, 2, 1)
         
         # out = F.relu(net)
@@ -366,6 +360,5 @@ class HcPCRPP(nn.Module):
 
 # net = HcPCRPP()
 # model_key = net.state_dict().keys()
-# print("预训练权重参数：")
 # for key in model_key:
 #     print(key)
