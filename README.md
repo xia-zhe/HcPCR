@@ -1,8 +1,4 @@
 # HcPCR++: Hyperbolic-Constraint Adaptive Curvature Point Cloud Reconstruction
-
-This repository contains the implementation for:
-
-**Hyperbolic-Constraint Adaptive Curvature Point Cloud Reconstruction from Single RGB-D Images**  
 Wenrui Li, Zhe Yang, Hongtao Chen, Wangmeng Zuo, Xiaopeng Fan, and Yonghong Tian
 
 HcPCR++ builds on the multiview compressive coding reconstruction pipeline and introduces hyperbolic constraints, adaptive curvature generation, and tensor-based geometry optimization to improve point cloud reconstruction from single RGB-D observations.
