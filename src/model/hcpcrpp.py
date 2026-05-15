@@ -114,10 +114,6 @@ class TRL2(nn.Module):
         self.core.data.uniform_(-0.1, 0.1)
 
     def forward(self, x):
-        """
-        x: shape = (B, *input_size)
-        假设 x 最后的 len(self.input_size) 个维度对应 input_size
-        """
         tucker_tensor = (self.core, list(self.factors))
         regression_weights = tl.tucker_to_tensor(tucker_tensor)
         out = tl_inner(x, regression_weights, n_modes=len(self.input_size))
