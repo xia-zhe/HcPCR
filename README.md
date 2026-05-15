@@ -103,6 +103,3 @@ The demo visualization is written to `demo/output.html`.
 
 This codebase is adapted from [NU-MCC](https://github.com/sail-sg/numcc/tree/main), which is itself built on Meta's [MCC](https://github.com/facebookresearch/MCC). We thank the authors of both projects for releasing their code.
 ```
-=======
-# HcPCR
-## Hyperbolic-Constraint Adaptive Curvature Point Cloud Reconstruction from Single RGB-D Images
