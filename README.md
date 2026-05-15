@@ -1,8 +1,6 @@
 # HcPCR++: Hyperbolic-Constraint Adaptive Curvature Point Cloud Reconstruction
 Wenrui Li, Zhe Yang, Hongtao Chen, Wangmeng Zuo, Xiaopeng Fan, and Yonghong Tian
 
-HcPCR++ builds on the multiview compressive coding reconstruction pipeline and introduces hyperbolic constraints, adaptive curvature generation, and tensor-based geometry optimization to improve point cloud reconstruction from single RGB-D observations.
-
 ## Installation
 
 Please see [INSTALL.md](INSTALL.md) for environment setup. The current code expects PyTorch, PyTorch3D, TensorLy, Geoopt, Open3D, and the other packages listed there.
