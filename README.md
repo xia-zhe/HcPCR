@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # HcPCR++: Hyperbolic-Constraint Adaptive Curvature Point Cloud Reconstruction
 
 This repository contains the implementation for:
