@@ -57,15 +57,6 @@ python demo_web.py --checkpoint pretrained/hcpcrpp.pth
 ```
 
 The demo visualization is written to `demo/output.html`.
-
-## Main Files
-
-- `main_hcpcrpp.py`: training, evaluation, and visualization entry point.
-- `src/model/hcpcrpp.py`: HcPCR++ model with adaptive curvature and tensor geometry modules.
-- `src/engine/engine.py`: train/eval loops and reconstruction losses.
-- `src/engine/engine_viz.py`: HTML and point cloud visualization utilities.
-- `scripts/prepare_co3d.py` and `scripts/prepare_hypersim.py`: dataset preprocessing scripts.
-
 ## Acknowledgement
 
 This codebase is adapted from [NU-MCC](https://github.com/sail-sg/numcc/tree/main), which is itself built on Meta's [MCC](https://github.com/facebookresearch/MCC). We thank the authors of both projects for releasing their code.
