@@ -17,18 +17,6 @@ Please see [DATASET.md](DATASET.md) for CO3D-v2 and Hypersim data preparation.
 
 The CO3D metadata cache is loaded from `dataset_cache/`, and Hypersim preprocessing outputs such as `hypersim_gt_train.pt` and `hypersim_gt_val.pt` should be placed in the repository root as in the original NU-MCC pipeline.
 
-## Checkpoints
-
- Put trained checkpoints under `pretrained/`, for example:
-
-```bash
-mkdir -p pretrained
-# expected example path
-pretrained/hcpcrpp.pth
-```
-
-You can pass any compatible checkpoint with `--resume [MODEL_PATH]` or `--checkpoint [MODEL_PATH]` for the demo scripts.
-
 ## CO3D-v2 Experiments
 
 Train HcPCR++ from scratch:
