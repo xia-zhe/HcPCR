@@ -1,5 +1,4 @@
 # HcPCR++: Hyperbolic-Constraint Adaptive Curvature Point Cloud Reconstruction
-Wenrui Li, Zhe Yang, Hongtao Chen, Wangmeng Zuo, Xiaopeng Fan, and Yonghong Tian
 
 ## Installation
 
